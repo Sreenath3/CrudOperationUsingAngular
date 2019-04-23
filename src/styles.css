@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+th{
+    font-family: Verdana;
+}
+h1
+{
+    font-family: verdana;
+}
+b{
+    font-family: verdana;
+}
+body{
+    background-color: lightblue;
+}
+a{
+    font-family: verdana;
+}

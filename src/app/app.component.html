@@ -1,0 +1,59 @@
+<!-- Container for sidebar(s) + page content -->
+<ng-sidebar-container style="height: 20vh;">
+        
+        <!-- A sidebar -->
+
+        
+        <ng-sidebar [(opened)]="_opened" position="left">
+                <button (click)="_toggleSidebar()" class="w3-bar-item w3-large">Close &times;</button>   
+            <ul>
+                
+                <li><a routerLink="/crud1" button type="submit" class="btn btn-success">view 2</a></li>
+               
+            </ul>
+        </ng-sidebar>
+    
+        <!-- Page content -->
+        <div ng-sidebar-content >
+               
+                <button class="w3-button w3-teal w3-xlarge" (click)="_toggleSidebar()">☰</button>
+              
+
+            
+    
+           
+        
+        </div>
+    
+    </ng-sidebar-container>
+
+<div style = "width:100%;text-align: center">
+    <div>
+     
+      <b>{{title | uppercase}}</b><br/>
+      
+      <b>{{title | lowercase}}</b><br>
+     
+       
+    </div>
+    
+ </div>
+ <div style = "width:100%;text-align: right">
+    <div>
+     
+      
+      <b>{{todaydate | date:'d/M/y'}}</b><br/>
+      <b>{{todaydate | date:'shortTime'}}</b>
+       
+    </div>
+    
+ </div>
+ 
+     
+      
+   
+
+ <div class="container text-center" style="width:100%;">
+   
+<router-outlet></router-outlet>
+

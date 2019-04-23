@@ -1,0 +1,86 @@
+
+
+<table align="left">
+<h1> ADD EMPLOYEE</h1>
+
+<b>ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+<input type="text" id="ID" required [(ngModel)]="emp.id">
+<br>
+
+<b>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+<input type ="text" id="Name" required [(ngModel)]="emp.name">
+<br>
+
+<b>Salary:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+<input type ="text" id="Salary" required [(ngModel)]="emp.salary">
+<br>
+
+<b>Department:</b>
+<input type ="text" id="ID" required [(ngModel)]="emp.department">
+<br>
+
+
+<input type="button" class="btn btn-success"value="AddEmployee" (click)="addRow()">
+</table>
+
+<p>
+  {{emp.id}}
+  {{emp.name}}
+  {{emp.salary}}
+  {{emp.department}}
+</p>
+
+<table class="table">
+    <div class="container">
+        <div class="row">
+          <div class="search-name">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Start searching for a name by id or name or department">
+  <tr>
+    <th>ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Salary</th>
+    <th scope="col">Department</th>
+    <th colspan="2">Action</th>
+  </tr>
+  <tr *ngFor="let emp of Employees | filter:searchText let i=index">
+    <td>
+      {{emp.id}}
+    </td>
+    <td>
+      {{emp.name}}
+    </td>
+    <td>
+      {{emp.salary|currency: "INR"}}
+    </td>
+    <td>
+      {{emp.department}}
+    </td>
+    <td><button type="submit" class ="btn btn-primary" name="update" (click)="update(emp)">Update</button></td>
+    <td><button type="submit" class ="btn btn-danger" name="Delete" (click)="update(emp)">Delete</button></td>
+  </tr>
+  </div>
+  </div>
+  </div>
+</table>
+<table align="right">
+<h1 align="center">UPDATE EMPLOYEE</h1>
+<div style="text-align:right;">
+ <b>ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+  <input type="number" required [(ngModel)]="emp.updateid">
+  <br>
+  <b>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+  <input type="text" required [(ngModel)]="emp.updatename">
+  <br>
+  <b>Salary:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+  <input type="text" required [(ngModel)]="emp.updatesalary">
+  <br>
+  <b>Department:</b>
+  <input type="text" required [(ngModel)]="emp.updatedepartment">
+  <br>
+
+  <button type="submit" class="btn btn-success" name="AddEmployee">Update Employee</button>
+
+</div> 
+</table>
+
+
